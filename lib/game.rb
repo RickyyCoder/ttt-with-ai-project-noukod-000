@@ -45,6 +45,22 @@ class Game
   end
   
 
+  def turn
+    player = current_player
+    current_move = player.move(board.dup.freeze)
+
+    unless board.valid_move?(current_move)
+      puts "Invalid move. Please try again."
+      turn
+    else
+      puts "Turn: #{board.turn_count + 1}"
+      board.update(current_move, player)
+      puts "#{player.token} moved #{current_move}"
+      puts
+      board.display
+      puts
+    end
+  end
 
   
 end
