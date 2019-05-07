@@ -10,4 +10,5 @@ class Player::Computer < Player
     puts "The computer chose #{cpu_move}"
     cpu_move
   end
+  
 end
