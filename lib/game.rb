@@ -62,10 +62,16 @@ class Game
     end
   end
 
- def play
+   def play
     until over?
       turn
     end
- end
+
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif
+      puts "Cats Game!"
+    end
+  end
   
 end
