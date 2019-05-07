@@ -14,15 +14,4 @@ module Players
       end
     end
 
-    def best_move(board)
-      WIN_COMBINATIONS.each do |combo|
-        combo = combo.map { |i| [i, board.cells[i]] }.sort_by { |i, v| v }
-
-        if combo[0][1] == " " && combo[1][1] == combo[2][1] && combo[2][1] != " "
-          return combo[0][0] + 1
-        end
-      end
-      board.valid_moves.sample
-    end
-  end
 end
